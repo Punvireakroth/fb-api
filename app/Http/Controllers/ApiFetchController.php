@@ -14,7 +14,7 @@ class ApiFetchController extends Controller
 
     public function fetchData()
     {
-        $url = "https://graph.facebook.com/v19.0/me/feed" . env('FACEBOOK_ACCESS_TOKEN');
+        $url = "https://graph.facebook.com/v19.0/me/feed?access_token=" . env('FACEBOOK_ACCESS_TOKEN');
 
         // dd($url);
 
