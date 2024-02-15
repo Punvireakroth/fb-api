@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\ApiFetchController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\ApiFetchController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +17,13 @@ use App\Http\Controllers\FacebookController;
 
 
 
-Route::get('/', [ApiFetchController::class, 'fetchData']);
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('fetchApi', [ApiFetchController::class, 'fetchData']);
+
+Route::get('phpmyinfo', function () {
+    phpinfo();
+})->name('phpmyinfo');
